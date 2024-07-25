@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # **📚 The Repo Content Summary**
 ## **🔢 BitWise first10**
 ### **1️⃣ isOdd(Long Long): bool**
@@ -28,3 +27,5 @@
 ##### **🔍 almost all numbers apear 3 times except one number i want that number**
 ### **3️⃣ generateAllSubsequences(string str):vector<string>**
 ##### **🔍 given str="abc" return vector={"","a","b","c","ab","ac","bc","abc"}**
+### **4️⃣ travellingSalesMan(vector<vector<int>>&dist,int setOfBits,int startingNode):int**
+##### **🔍 Recursive function to get shortest path of a graph (A->B->C->D->A)**

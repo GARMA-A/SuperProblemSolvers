@@ -9,7 +9,7 @@ binary right shift
 20>>2 = 5 (20=00010100) after the right shift(00000101)
 (shifted number =mainNUm / 2^numberOfShifts)20/2^2= 5 
 */
-#include "../import.cpp" 
+#include "../IMPORTME.cpp" 
 
 
 bool isOdd(ll n)
@@ -267,6 +267,7 @@ string convertToBinaryStringVersion(ll n)
 
 signed main()
 {
+       faster();
        // isOdd();
        // isPowerOfTwo();
        // countBits();

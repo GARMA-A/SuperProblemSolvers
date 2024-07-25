@@ -3,7 +3,7 @@ you need to read the notes of first 10 problems file
 to understand this advanced BitWise problems ....
 now let's get started
 */
-#include "../import.cpp"
+#include "../IMPORTME.cpp"
 
 int unique2NPlus1Seq(vector<int>seq)
 {
@@ -104,15 +104,65 @@ vector<string> generateAllSubsequences(string str)
        return ans;
 }
 
+int travellingSalesMan(vector<vector<int>>&dist,int setOfBits , int startingNode)
+{
+       //The traveling salesman problem is a famous problem
+       // in which we need to find the shortest or least expensive
+       // path in order to pass through all the points and return
+       // to the point from which we started   A  B  C  D 
+       // must start with A and end with A   A[0,20,42,25]
+       //  the shortest path is              B[20,0,30,34]
+       //  A → B → D → C → A: cost 85        C[42,30,0,10]
+       //                                    D[25,34,10,0]
+       //base case:
+       int numberOfCities = dist.size();
+       if(setOfBits ==(1<<numberOfCities)-1)
+       {
+           // return to the startingCity
+              return dist[startingNode][0];
+       }
+       // otherwise try all possible options
+       int ans = INT_MAX;
+       for (int choice = 0;choice < numberOfCities;choice++)
+       {
+              //need to check if city visited already
+              if((setOfBits & (1<<choice))==0) // not visited
+              {
+                     int subProb = dist[startingNode][choice] +
+                     travellingSalesMan(dist, setOfBits | (1 << choice), choice);
+                     ans = min(ans, subProb); // get smallest cost
+              }
+       }
+       return ans;
+       // if you dont understand read this part 
+       // i have set of cities thats binary format start
+       // from 0000 -> 1111 if i have 4 nodes and check if 
+       // i reached 1111 the base case and if not run the for loop and
+       // take node that is not taken before untill rech the base case
+       // then return the cur cost and the parent function will added also
+       // and ans will keep the min answer with me 
+}
+
+
 
 
 signed main()
 {
-
+       faster();
+     
        // unique2NPlus1Seq();
        // unique2NPlus2Seq();
        // unique3NPlus1Seq();
        // generateAllSubsequences();
+       
+       // vector<vector<int>> dist = {
+       //     {0, 20, 42, 25},
+       //     {20, 0, 30, 34},
+       //     {42, 30, 0, 10},
+       //     {25, 34, 10, 0}
+       // };
+       // right answer = 85
+       // travellingSalesMan(dist, 1, 0);
 }
 
 
