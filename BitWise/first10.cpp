@@ -9,23 +9,8 @@ binary right shift
 20>>2 = 5 (20=00010100) after the right shift(00000101)
 (shifted number =mainNUm / 2^numberOfShifts)20/2^2= 5 
 */
+#include "../import.cpp" 
 
-#include <bits/stdc++.h>
-using namespace std;
-
-typedef long long ll;
-typedef unsigned long long ull;
-typedef vector<ll> vll;
-typedef deque<ll> dll;
-typedef pair<ll, ll> pll;
-const float pi = 3.141592653589793238;
-
-void faster()
-{
-       ios_base::sync_with_stdio(false);
-       cin.tie(nullptr);
-       cout.tie(nullptr);
-}
 
 bool isOdd(ll n)
 {
@@ -54,7 +39,7 @@ bool isPowerOfTwo(ll n)
        {
               cerr << e.what() << endl;
        }
-       if(n&n-1) 
+       if(n&(n-1)) 
        return false;
        return true;
 }
@@ -277,4 +262,20 @@ string convertToBinaryStringVersion(ll n)
        }
        reverse(ans.begin(), ans.end());
        return ans;
+}
+
+
+signed main()
+{
+       // isOdd();
+       // isPowerOfTwo();
+       // countBits();
+       // getIthBit();
+       // setIthBit();
+       // clearFirstNBits();
+       // clearRangeOfBits();
+       // setRangeOfBits();
+       // convertToDecimal();
+       // convertToBinary();
+       // convertToBinaryStringVersion();
 }
