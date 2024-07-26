@@ -1,7 +1,7 @@
 /*NOTES
 You need a good understanding of recursive algorithms
-and backtracking techniques before solveing DP(dynamic programming)
-problems have fun !
+and backtracking techniques before solving DP(dynamic programming)
+questions have fun !
 
 */
 #include "../IMPORTME.cpp"
