@@ -32,7 +32,7 @@ bool isPrime(ll n) // O(n^0.5)
       return true;
 }
 
-void sieve(ll n,vector<bool>&isPrime) //O (N*loglogN), 
+void sieve(ll n,vector<bool>&isPrime) //O (N*loglog(n)), 
 {
        /*
               The Sieve of Eratosthenes is an efficient algorithm
@@ -55,11 +55,85 @@ void sieve(ll n,vector<bool>&isPrime) //O (N*loglogN),
               
        
 }
+void factorise(ll n) // O (N^0.5)
+{
+       // give me the factoriseation of anumber
+       // factorisation mean how many prime numbers
+       // the number contain like 8 = 2*4 = 2*2*2 so 2^3 is 
+       // prime factorisation mean i have 3 of the prime 2 on it
+       // i will loop untill the sqrt of n so either i will
+       // find a prime number and stop on it or it will be one
+       // and one not count with me
+
+       for (int i = 2; i * i <= n;i++)
+       {
+              if(n%i == 0 )
+              {
+                     int ctr = 0;
+                     while(n%i==0)
+                     {
+                            ctr++;
+                            n /= i;
+                     }
+                     cout << i << "^" << ctr << ",";
+              }
+       }
+       if(n!=1)
+       {
+              cout << n << "^" << 1 << " ";
+       }
+}
+
+
+void preComputePrimeDivisors(ll n) // O(Nloglog(n))
+{
+    // factorise using sieve
+    vector<ll> sieve(n + 1);
+    for(ll i = 2 ; i <= n ; i++)
+    {
+       if (not sieve[i])
+       {
+              sieve[i] = i;
+              for (ll j = i * i; j <= n;j+=i)
+              {
+                     // store smallest prime divisor for that number j
+                     sieve[j] = ((sieve[j]<i and sieve[j]!=0)?sieve[j]:i);
+              }
+       }
+
+    }
+    ofstream newFile("sieve.txt");
+    if (newFile.is_open())
+    {
+           newFile << "{" << " ";
+           for (ll i = 0; i < n + 1; i++)
+           {
+                  newFile << sieve[i];
+                  if(i<n-1) newFile << ", ";
+                  if(i%8==0) newFile <<endl;
+           }
+           newFile << "}" << " ";
+    }
+    newFile.close();
+
+}
+void factoriseWithSieve(ll n , vector<ll>&sieve) // O (LogN)
+{
+    string s;
+    while(n>1)
+    {
+           s += to_string(sieve[n]);
+           if(n/sieve[n]!=1)
+           s += '*';
+           n /= sieve[n];
+    }
+    cout << s;
+}
 
 
 signed main()
 {
-       isPrime(100);
+       // isPrime(100);
        /********************** */
        // ll n;
        // cin >> n;
@@ -68,5 +142,26 @@ signed main()
        // for (int i = 0; i<n;i++)
        //        cout << isPrime[i] << " " << i << endl;
        /********************************/
+       // factorise(99);
 
+       /************************************************* */
+       //Get the pre computed smallest prime numbers from the file we store it to
+       /*******/
+       // preComputePrimeDivisors(100);
+       // past them here and disable the call of the function
+       //DONOT store in the array more than 10^6 elements this = 40MB memory
+       // vector<ll> getPreComputedSieve = {0,
+       //                                   0, 2, 3, 2, 5, 2, 7, 2,
+       //                                   3, 2, 11, 2, 13, 2, 3, 2,
+       //                                   17, 2, 19, 2, 3, 2, 23, 2,
+       //                                   5, 2, 3, 2, 29, 2, 31, 2,
+       //                                   3, 2, 5, 2, 37, 2, 3, 2,
+       //                                   41, 2, 43, 2, 3, 2, 47, 2,
+       //                                   7, 2, 3, 2, 53, 2, 5, 2,
+       //                                   3, 2, 59, 2, 61, 2, 3, 2,
+       //                                   5, 2, 67, 2, 3, 2, 71, 2,
+       //                                   73, 2, 3, 2, 7, 2, 79, 2,
+       //                                   3, 2, 83, 2, 5, 2, 3, 2,
+       //                                   89, 2, 7, 2, 3, 2, 5, 2,
+       //                                   97, 2, 32};
 }

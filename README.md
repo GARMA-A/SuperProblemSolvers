@@ -29,7 +29,7 @@
 ### **2️⃣ bigFactorial(int n):vector<int>**
 #### **🔍 Calculate the factorial of a number up to a 1000-digit number**
 
-## **🔢 BitWise first 10**
+## **➕➖ BitWise first 10**
 
 ### **1️⃣ isOdd(Long Long): bool**
 #### **🔍 Check if the given number is odd or not**
@@ -60,7 +60,7 @@
 ### **🔟 convertToBinary(Long Long n): Long Long**
 #### **🔍 There is also convertToBinary(Long Long n): string a string version**
 
-## **🔢 BitWise second 10**
+## **➕➖ BitWise second 10**
 
 ### **1️⃣ unique2NPlus1Seq(vector<int> seq):int**
 ##### **🔍 Given 2n+1 numbers all apear twice except one number return that unique number**
@@ -74,3 +74,33 @@
 
 ### **4️⃣ travellingSalesMan(vector<vector<int>>&dist,int setOfBits,int startingNode):int**
 ##### **🔍 Recursive function to get shortest path of a graph (A->B->C->D->A)**
+
+## **➕➖DP (Dynamic Programming) first 10**
+#### **Empty For Now**
+
+
+## **➕➖ Number Theory (DP)**
+### **1️⃣ isPrime(ll n): bool**
+##### **🔍 Fast solution to check if a number is prime**
+### **2️⃣ sieve(ll n, vector<bool>& isPrime): void**
+##### **🔍 Generate a boolean array where each index indicates if it is a prime number**
+### **3️⃣ factorise(ll n): void**
+##### **🔍 Print the factorization of the number**
+### **4️⃣ factoriseWithSieve(ll n, vector<ll>& sieve): void**
+##### **🔍 Precompute primes using a sieve and print the factorization of the number**
+
+
+
+
+## **➕➖ WorkWithFiles first 10**
+### **1️⃣ overwriteFile(const string& filename):void**
+### **2️⃣ appendToFileme(const string& filename):void**
+### **3️⃣ readNumbersFromFile(const string& filename):void**
+### **4️⃣ appendTextToFileme(const string& filename):void**
+### **5️⃣ readLinesFromFile(const string& filename):void**
+##### **🔍 Each function has two versions to cover different syntax**
+
+
+
+
+
