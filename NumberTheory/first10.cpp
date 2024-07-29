@@ -131,6 +131,58 @@ void factoriseWithSieve(ll n , vector<ll>&sieve) // O (LogN)
 }
 
 
+
+int mygcd(int a , int b) 
+{
+
+/*      a   b                         a   b
+       20  12                         12  20  
+           20%12=8                       12%20=12
+       12   8                         20   12
+            12%8 = 4                        20%12=8 
+       8     4                        12    8   continue
+             8%4 = 0
+       4      0      return 4                  return 4
+  
+ */
+       if (b==0)
+              return a;
+       return mygcd(b, a%b);
+}
+
+
+
+
+// Function to compute nCr
+long long nCr(int n, int r) {
+    if (r > n || r < 0) return 0;
+    if (r == 0 || r == n) return 1;
+    r = min(r, n - r); // nCr is the same as nC(n-r)
+    long long result = 1, denominator = 1;
+    for (int i = 1; i <= r; ++i) {
+        result *= (n - r + i);
+        denominator *= i;
+        long long gcdvar = gcd(result, denominator);
+        result /= gcdvar;
+        denominator /= gcdvar;
+    }
+    return result;
+}
+
+// Function to compute nPr
+long long nPr(int n, int r) {
+    if (r > n || r < 0) return 0;
+    long long result = 1;
+    for (int i = 0; i < r; ++i) {
+        result *= (n - i);
+    }
+    return result;
+}
+
+
+
+
+
 signed main()
 {
        // isPrime(100);
@@ -164,4 +216,6 @@ signed main()
        //                                   3, 2, 83, 2, 5, 2, 3, 2,
        //                                   89, 2, 7, 2, 3, 2, 5, 2,
        //                                   97, 2, 32};
+
+       // cout << mygcd(20, 8);
 }

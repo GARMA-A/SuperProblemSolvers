@@ -79,24 +79,37 @@
 #### **Empty For Now**
 
 
-## **➕➖ Number Theory (DP)**
+## **➕➖ Number Theory first 10**
 ### **1️⃣ isPrime(ll n): bool**
 ##### **🔍 Fast solution to check if a number is prime**
+
 ### **2️⃣ sieve(ll n, vector<bool>& isPrime): void**
 ##### **🔍 Generate a boolean array where each index indicates if it is a prime number**
+
 ### **3️⃣ factorise(ll n): void**
 ##### **🔍 Print the factorization of the number**
+
 ### **4️⃣ factoriseWithSieve(ll n, vector<ll>& sieve): void**
 ##### **🔍 Precompute primes using a sieve and print the factorization of the number**
+
+### **5️⃣ mygcd(int a , int b):int**
+
+### **6️⃣ nCr(int n , int r):long long**
+
+### **7️⃣ nPr(int n , int r):long long**
 
 
 
 
 ## **➕➖ WorkWithFiles first 10**
 ### **1️⃣ overwriteFile(const string& filename):void**
-### **2️⃣ appendToFileme(const string& filename):void**
+
+### **2️⃣ appendToFile(const string& filename):void**
+
 ### **3️⃣ readNumbersFromFile(const string& filename):void**
-### **4️⃣ appendTextToFileme(const string& filename):void**
+
+### **4️⃣ appendTextToFile(const string& filename):void**
+
 ### **5️⃣ readLinesFromFile(const string& filename):void**
 ##### **🔍 Each function has two versions to cover different syntax**
 
