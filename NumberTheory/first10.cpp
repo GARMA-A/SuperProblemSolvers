@@ -152,9 +152,10 @@ int mygcd(int a , int b)
 
 
 
-
+// nCr == nCn-r
 // Function to compute nCr
-long long nCr(int n, int r) {
+long long nCr(int n, int r) //Complexity O(r)
+{
     if (r > n || r < 0) return 0;
     if (r == 0 || r == n) return 1;
     r = min(r, n - r); // nCr is the same as nC(n-r)
@@ -170,13 +171,53 @@ long long nCr(int n, int r) {
 }
 
 // Function to compute nPr
-long long nPr(int n, int r) {
+long long nPr(int n, int r)//Complexity O(r)
+{
     if (r > n || r < 0) return 0;
     long long result = 1;
     for (int i = 0; i < r; ++i) {
         result *= (n - i);
     }
     return result;
+}
+
+void pascalTriangle(vector<vector<int>> &table)
+{
+    /*    r0   r1   r2    r3  r4    r5 
+      n | nC0  nC1  nC2  nC3  nC4   nC5 
+        |--------------------------------
+      0 |  1
+      1 |  1    1
+      2 |  1    2    1
+      3 |  1    3    3    1
+      4 |  1    4    6    4    1
+      5 |  1    5    10   10   5    1
+     */
+
+       int n = table.size();
+       for(int i= 0 ; i<n; i++ )
+              for (int j = 0; j <= i;j++)
+                     if(j==0 || j ==i)
+                            table[i][j] = 1;
+                     else
+                            table[i][j] = table[i - 1][j - 1] + table[i - 1][j];
+}
+
+int countBST(int n  ,map<int,int>dp={{0,0}}) // Complexity O(n^2)
+{
+   // if i have 3 nodes i can make 5 different binary trees
+       if (n == 0 or n==1)
+              return 1;
+       if (dp[n]!=0)
+              return dp[n];
+       int ans = 0;
+       for(int i = 1; i <= n; i++)
+       {
+              int x = countBST(i - 1 , dp);
+              int y = countBST(n - i,dp);
+              ans += x * y;
+       }
+       return dp[n]=ans;
 }
 
 
@@ -201,7 +242,7 @@ signed main()
        /*******/
        // preComputePrimeDivisors(100);
        // past them here and disable the call of the function
-       //DONOT store in the array more than 10^6 elements this = 40MB memory
+       //DONOT store in the array more than 10^6 elements thiso = 40MB memory
        // vector<ll> getPreComputedSieve = {0,
        //                                   0, 2, 3, 2, 5, 2, 7, 2,
        //                                   3, 2, 11, 2, 13, 2, 3, 2,
@@ -218,4 +259,17 @@ signed main()
        //                                   97, 2, 32};
 
        // cout << mygcd(20, 8);
+  /********************************************/
+
+       // vector<vector<int>> table(10 , vector<int>(10,0));
+       // pascalTriangle(table);
+       // for (int i=0; i<10; i++)
+       // {
+       //   for (int j=0; j<=i; j++)
+       //          cout << table[i][j] << " ";
+       //     cout << endl;
+       // }
+ /********************************* */
+       cout << countBST(4
+       );
 }

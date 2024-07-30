@@ -17,6 +17,7 @@
 #### **4) If the problem was solved on LeetCode, Codeforces, or another problem-solving platform,**
 #### **provide the link in the comments.**
 
+<hr/>
 
 # **📚The Repo Content Summary📚**
 
@@ -75,9 +76,12 @@
 ### **4️⃣ travellingSalesMan(vector<vector<int>>&dist,int setOfBits,int startingNode):int**
 ##### **🔍 Recursive function to get shortest path of a graph (A->B->C->D->A)**
 
+<hr/>
+
 ## **➕➖DP (Dynamic Programming) first 10**
 #### **Empty For Now**
 
+<hr/>
 
 ## **➕➖ Number Theory first 10**
 ### **1️⃣ isPrime(ll n): bool**
@@ -98,8 +102,38 @@
 
 ### **7️⃣ nPr(int n , int r):long long**
 
+### **NEW**
+### **8️⃣ pascalTriangle(vector<vector<int>>&table):void**
+##### **🔍 Give you the 2D vector for paascalTriangle to precompute nCr**
 
 
+### **9️⃣ countBST(int n  ,map<int,int>dp={{0,0}}):int**
+##### **🔍 calculate how many different bunary trees can be created if i have n nodes**
+
+<hr/>
+
+## **➕➖ Recursion first 10**
+
+### **1️⃣ **
+##### **🔍 **
+
+### **2️⃣**
+##### **🔍 Generate a boolean array where each index indicates if it is a prime number**
+
+### **3️⃣ **
+##### **🔍 **
+
+### **4️⃣**
+##### **🔍**
+
+### **5️⃣ **
+
+### **6️⃣ **
+
+### **7️⃣**
+
+
+<hr/>
 
 ## **➕➖ WorkWithFiles first 10**
 ### **1️⃣ overwriteFile(const string& filename):void**
