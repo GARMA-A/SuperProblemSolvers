@@ -102,10 +102,8 @@
 
 ### **7️⃣ nPr(int n , int r):long long**
 
-### **NEW**
 ### **8️⃣ pascalTriangle(vector<vector<int>>&table):void**
 ##### **🔍 Give you the 2D vector for paascalTriangle to precompute nCr**
-
 
 ### **9️⃣ countBST(int n  ,map<int,int>dp={{0,0}}):int**
 ##### **🔍 calculate how many different bunary trees can be created if i have n nodes**
@@ -114,23 +112,36 @@
 
 ## **➕➖ Recursion first 10**
 
-### **1️⃣ **
-##### **🔍 **
+### **1️⃣ fac(int n):int**
+##### **🔍 return factorial of anumber**
 
-### **2️⃣**
-##### **🔍 Generate a boolean array where each index indicates if it is a prime number**
+### **2️⃣ fib(int n ):int**
+##### **🔍 return the nth fibonacci sequence**
 
-### **3️⃣ **
-##### **🔍 **
+### **3️⃣ isSorted(vector<int>&v , int size):bool**
+##### **🔍return true or false if the vector sorted or not**
 
-### **4️⃣**
-##### **🔍**
+### **4️⃣printInc(int n):void**
+##### **🔍 print from 1->n**
 
-### **5️⃣ **
+### **5️⃣printDec(int n):void**
+##### **🔍 print from n->1**
 
-### **6️⃣ **
+### **6️⃣slowPow(int a , int n):int**
+##### **🔍 return a^n in O(n) complexity**
 
-### **7️⃣**
+### **7️⃣ fastPow(double x, long long  n):double**
+##### **🔍 return a^n in O(log(n)) complexity**
+
+### **8️⃣ tiling(int n):int**
+##### **🔍describe in the function by comments**
+
+### **9️⃣ binaryStrings(int n, bool prevIsOne = false):int**
+##### **🔍 print number of ways to perform all binary strings of size n two consecutive ones**
+
+### **🔟permutations(string s,string sub=""):void**
+##### **🔍give "abc" print 'a','b','c','ab','ac','ca','abc'**
+
 
 
 <hr/>
