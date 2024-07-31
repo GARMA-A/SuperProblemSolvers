@@ -17,11 +17,29 @@
 #### **4) If the problem was solved on LeetCode, Codeforces, or another problem-solving platform,**
 #### **provide the link in the comments.**
 
+
 <hr/>
 
 # **📚The Repo Content Summary📚**
 
+## **➕➖ Backtracing first 10**
+
+### **1️⃣ subsets(int i , int j):void<int>**
+#### **🔍 Print all the subsets abs={'a','b','c','ab','ac','abc',''}**
+
+### **2️⃣ permutation():void<int>**
+#### **🔍 Using global variables  to print abc={abc,bac,cba,acb,bca,cab}**
+
+### **3️⃣ generateBrackets():void**
+#### **🔍 using size n = 2  print {() (())} all valid brackets**
+
+### **4️⃣ nQueens(int row=0):bool**
+#### **🔍 if you have n*n chess board print all ways that can i place n queens on it**
+<hr/>
+
 ## **➕➖ BigInt first 10**
+
+<hr/>
 
 ### **1️⃣ sumBigInts(vector<int>n1,vector<int>n2):vector<int>**
 #### **🔍 Sum two digit vectors and return the resulting vector**
@@ -60,8 +78,11 @@
 
 ### **🔟 convertToBinary(Long Long n): Long Long**
 #### **🔍 There is also convertToBinary(Long Long n): string a string version**
+<hr/>
 
 ## **➕➖ BitWise second 10**
+
+<hr/>
 
 ### **1️⃣ unique2NPlus1Seq(vector<int> seq):int**
 ##### **🔍 Given 2n+1 numbers all apear twice except one number return that unique number**
@@ -84,6 +105,8 @@
 <hr/>
 
 ## **➕➖ Number Theory first 10**
+<hr/>
+
 ### **1️⃣ isPrime(ll n): bool**
 ##### **🔍 Fast solution to check if a number is prime**
 
@@ -111,6 +134,7 @@
 <hr/>
 
 ## **➕➖ Recursion first 10**
+<hr/>
 
 ### **1️⃣ fac(int n):int**
 ##### **🔍 return factorial of anumber**
@@ -139,14 +163,14 @@
 ### **9️⃣ binaryStrings(int n, bool prevIsOne = false):int**
 ##### **🔍 print number of ways to perform all binary strings of size n two consecutive ones**
 
-### **🔟permutations(string s,string sub=""):void**
+### **🔟 subsets(string s,string sub=""):void**
 ##### **🔍give "abc" print 'a','b','c','ab','ac','ca','abc'**
-
-
 
 <hr/>
 
 ## **➕➖ WorkWithFiles first 10**
+<hr/>
+
 ### **1️⃣ overwriteFile(const string& filename):void**
 
 ### **2️⃣ appendToFile(const string& filename):void**

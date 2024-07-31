@@ -126,15 +126,15 @@ int party(int n)
 }
 
 
-void permutations(string s,string sub="")
+void subsets(string s,string sub="")
 {
        if(s.size()==0)
        {
               cout << sub<<endl;
               return;
        }
-       permutations(s.substr(1), sub);
-       permutations(s.substr(1), sub + s[0]);
+       subsets(s.substr(1), sub);
+       subsets(s.substr(1), sub + s[0]);
 
 }
 
@@ -151,5 +151,5 @@ signed main()
        // cout << tiling(4);
        // cout << binaryStrings(3);
        //cout<<party(3);
-       // permutations("abc");
+       // subsets("abc");
 }
