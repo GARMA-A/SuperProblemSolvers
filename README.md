@@ -35,6 +35,10 @@
 
 ### **4️⃣ nQueens(int row=0):bool**
 #### **🔍 if you have n*n chess board print all ways that can i place n queens on it**
+
+### **5️⃣ sodukoSolver(int i=0 , int j=0):bool**
+#### **🔍 solve 9*9 grid by soduko game rules**
+
 <hr/>
 
 ## **➕➖ BigInt first 10**
@@ -165,8 +169,22 @@
 
 ### **🔟 subsets(string s,string sub=""):void**
 ##### **🔍give "abc" print 'a','b','c','ab','ac','ca','abc'**
-
 <hr/>
+
+## **➕➖ Two Pointers 10**
+
+### **1️⃣ binarySearch(vector<int>& v , int target):int\***
+##### **🔍 return true if the target found else return  false**
+
+### **2️⃣ lowerBound(vector<int> &v , int target):int\***
+##### **🔍 return the first number gerater or equal to the target**
+
+### **3️⃣ upperBound(vector<int> &v , int target):int\***
+##### **🔍 return the first element gerater then  the target**
+ 
+### **4️⃣firstLastApear(vector<int>& v, int target):pair<int*,int*>**
+##### **🔍 return the first and last apear of the target**
+
 
 ## **➕➖ WorkWithFiles first 10**
 <hr/>

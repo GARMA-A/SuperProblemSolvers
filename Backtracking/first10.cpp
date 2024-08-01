@@ -130,6 +130,67 @@ bool nQueens(int row=0)
        }
        return false;
 }
+/****************************/
+/**************************************************/
+////    Sudoku Solver     ////
+bool isSafe(vector<vector<char>>&sudokuBoard,int no , int i , int j)
+{
+       for(int k = 0 ; k<9 ; k++)
+       {
+              if(sudokuBoard[i][k]==(no+'0') or sudokuBoard[k][j]==(no+'0'))
+              {
+                     return false;
+              }
+       }
+
+       int x = (i / 3) * 3 , y = (j / 3) *3;
+       for(int l = x ; l<x+3 ; l++)
+       {
+              for(int m = y ; m<y+3 ; m++)
+              {
+                     if(sudokuBoard[l][m]==(no+'0'))
+                     {
+                            return false;
+                     }
+
+              }
+       }
+       return true;
+}
+
+
+
+bool sodukoSolver(vector<vector<char>>&sudokuBoard , int i=0 , int j=0)
+{
+      // https://leetcode.com/problems/sudoku-solver/description/
+       if(i==9)
+       {
+          return true;
+       }
+       if(j==9)
+       {
+              return sodukoSolver(sudokuBoard ,i+1 ,0);
+       }
+       if(sudokuBoard[i][j]!='.')
+       {
+              return sodukoSolver(sudokuBoard ,i,j+1);
+       }
+       for(int no = 1 ; no<=9 ; no++)
+       {
+              if(isSafe(sudokuBoard,no , i , j))
+              {
+                     sudokuBoard[i][j] = (no+'0');
+                     if(sodukoSolver(sudokuBoard ,i,j+1))
+                            return true;
+                     sudokuBoard[i][j] = '.';
+                     
+              }
+       }
+       
+       return false;
+
+
+}
 
 
 signed main()
@@ -139,7 +200,20 @@ signed main()
        // cin >> n;
        // generateBrackets();
        /*****************/
-       cin>>sizeOfTheBoard;
-       board.resize(sizeOfTheBoard, string(sizeOfTheBoard, '.'));
-       nQueens();
+       // cin>>sizeOfTheBoard;
+       // board.resize(sizeOfTheBoard, string(sizeOfTheBoard, '.'));
+       // nQueens();
+       /***********************/
+       vector<vector<char>> sudokuBoard = 
+              {{'5', '3', '.', '.', '7', '.', '.', '.', '.'},
+               {'6', '.', '.', '1', '9', '5', '.', '.', '.'},
+               {'.', '9', '8', '.', '.', '.', '.', '6', '.'},
+               {'8', '.', '.', '.', '6', '.', '.', '.', '3'},
+               {'4', '.', '.', '8', '.', '3', '.', '.', '1'},
+               {'7', '.', '.', '.', '2', '.', '.', '.', '6'},
+               {'.', '6', '.', '.', '.', '.', '2', '8', '.'},
+               {'.', '.', '.', '4', '1', '9', '.', '.', '5'},
+               {'.', '.', '.', '.', '8', '.', '.', '7', '9'}};
+
+       sodukoSolver(sudokuBoard,0,0);
 }
