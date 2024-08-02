@@ -108,6 +108,12 @@
 
 <hr/>
 
+## **➕➖ General first 10**
+<hr/>
+
+### **1️⃣ maxActivitiesICanDo(vector<pair<int,int>>&v):int**
+##### **🔍 give array of pairs (start time , end time) return max number of activities you can do**
+
 ## **➕➖ Number Theory first 10**
 <hr/>
 
