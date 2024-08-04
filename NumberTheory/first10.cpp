@@ -205,7 +205,10 @@ void pascalTriangle(vector<vector<int>> &table)
 
 int countBST(int n  ,map<int,int>dp={{0,0}}) // Complexity O(n^2)
 {
+    //if i have 2 nodes i can make 2 different binary trees 
    // if i have 3 nodes i can make 5 different binary trees
+   // if i have 4 nodes i can make 14 different binary trees
+   // the equation = (2nCn/n+1)
        if (n == 0 or n==1)
               return 1;
        if (dp[n]!=0)

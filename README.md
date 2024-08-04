@@ -84,7 +84,7 @@
 #### **🔍 There is also convertToBinary(Long Long n): string a string version**
 <hr/>
 
-## **➕➖ DataStructure Files**
+## **➕➖ DataStructures Files**
 
 ### **1️⃣ arrStack.c++**
 
@@ -94,18 +94,46 @@
 
 ### **4️⃣ linkedQueue.c++**
 
-
 ### **5️⃣ list.c++**
 
 ### **6️⃣ Pariorityqueue.c++**
-
 
 ### **7️⃣ queue.c++**
 
 ### **8️⃣ stack.c++**
 
+### **9️⃣ graph.c++**
 
 <hr/>
+
+## **➕➖ Sorts**
+
+### **1️⃣ mergeSort(vector<int>arr):vector<int>**
+
+### **2️⃣ comming soon**
+
+### **3️⃣ comming soon**
+
+### **4️⃣ comming soon**
+
+### **5️⃣ comming soon**
+
+### **6️⃣ comming soon**
+
+### **7️⃣ comming soon**
+
+### **8️⃣ comming soon**
+
+### **9️⃣ comming soon**
+
+<hr/>
+
+## **STL**
+
+### **1️⃣ list.c++**
+
+
+
 
 ## **➕➖ BitWise second 10**
 
@@ -129,9 +157,15 @@
 ## **➕➖DP (Dynamic Programming) first 10**
 #### **Empty For Now**
 
+
+
+
 <hr/>
 
-## **➕➖ General first 10**
+
+
+
+## **➕➖ Greedy first 10**
 
 ### **1️⃣ maxActivitiesICanDo(vector<pair<int,int>>&v):int**
 ##### **🔍 give array of pairs (start time , end time) return max number of activities you can do**
