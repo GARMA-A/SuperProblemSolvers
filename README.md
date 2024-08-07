@@ -110,27 +110,17 @@
 
 ### **1️⃣ mergeSort(vector<int>arr):vector<int>**
 
-### **2️⃣ comming soon**
+### **2️⃣ bubbleSort(vector<int>&arr):void**
 
-### **3️⃣ comming soon**
-
-### **4️⃣ comming soon**
-
-### **5️⃣ comming soon**
-
-### **6️⃣ comming soon**
-
-### **7️⃣ comming soon**
-
-### **8️⃣ comming soon**
-
-### **9️⃣ comming soon**
+### **3️⃣ selectionSort(vector<int> & arr):void**
 
 <hr/>
 
 ## **STL**
 
 ### **1️⃣ list.c++**
+### **2️⃣  vector.c++**
+### **3️⃣  algorithm.c++**
 
 
 
