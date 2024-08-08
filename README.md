@@ -119,8 +119,10 @@
 ## **STL**
 
 ### **1️⃣ list.c++**
-### **2️⃣  vector.c++**
-### **3️⃣  algorithm.c++**
+### **2️⃣ vector.c++**
+### **3️⃣ algorithm.c++**
+### **4️⃣ lambda.c++**
+### **5️⃣ deque.c++**
 
 
 
