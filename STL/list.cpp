@@ -24,13 +24,15 @@ list<int>::iterator iter = l1.begin();
 advance(iter, 2);  // move to element number 3
 *iter = 555;
 copy(l1.begin(), l1.end(),ostream_iterator<int>(cout," "));
+cout << endl;
 
 //***********************************/
 l1.sort();            // O(n log n) - Sorting the list (mergesort is typically used for linked lists)
 //***********************************/
-
-l1.assign(10, 2); //O(n) reassign all elements in list to value = 2
-// size= 10   
+l1.assign({1,2,3,4}); // O(n) replace all elements on the list with 1,2,3,4
+l1.assign(10,2); //O(n) reassign all elements in list to value = 2
+// copy(l1.begin(), l1.end(), ostream_iterator<int>(cout, ""));
+size= 10   
 copy(l1.begin(), l1.end(),ostream_iterator<int>(cout , " "));
 
 //***********************************/
