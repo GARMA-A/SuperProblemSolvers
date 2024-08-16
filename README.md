@@ -20,6 +20,29 @@
 
 <hr/>
 
+## **AD-Hcoks first 10**
+
+### **1️⃣ preFixCowsIds():void**
+#### **🔍 Implement prefix in three arrays and output queries based on it**
+
+
+### **2️⃣ minMaxSubArrSum():void**
+#### **🔍 [1,-2,3,4] maxSum can get :[3,4]=7 minSum=[-2]=-2**
+
+
+### **3️⃣ partialSum()**
+#### **🔍 implement the partialSum**
+
+
+### **4️⃣ maxRestaurant()**
+#### **🔍 Find the maximum number of people who visited the restaurant at the same time.**
+
+
+### **5️⃣  preFix2DVersion()**
+#### **🔍 implement the 2D array Prefix**
+
+<hr/>
+
 # **📚The Repo Content Summary📚**
 
 ## **➕➖ Backtracing first 10**
