@@ -139,7 +139,7 @@
 
 <hr/>
 
-## **STL**
+## **STL(not complete)**
 
 ### **1️⃣ list.c++**
 ### **2️⃣ vector.c++**
@@ -248,7 +248,7 @@
 ##### **🔍give "abc" print 'a','b','c','ab','ac','ca','abc'**
 <hr/>
 
-## **➕➖ Two Pointers 10**
+## **➕➖ Two Pointers 10(not complete)**
 
 ### **1️⃣ binarySearch(vector<int>& v , int target):int\***
 ##### **🔍 return true if the target found else return  false**

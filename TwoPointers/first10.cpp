@@ -192,7 +192,7 @@ long long coinsNeededTofillNrows(long long rows)
 }
 /*this function compare if your current coins is enough
 to fill this number of rows or not */
-bool predicate(long long rows,long long myCoins)
+bool canIfillNrowsWithMyCurrentCoins(long long rows/*Answer*/,long long myCoins)
 {
        return coinsNeededTofillNrows(rows)<=myCoins;
 }
@@ -207,7 +207,7 @@ long long howManyRowsCanFillwithMycoins(long long myCoins)
        while(minRows<=maxRows)
        {
               int midRows =(maxRows+minRows)/2;
-              if(predicate(midRows,myCoins))
+              if(canIfillNrowsWithMyCurrentCoins(midRows,myCoins))
               {
                      FinalAnswer = midRows;
                      minRows = midRows+1;
@@ -220,6 +220,73 @@ long long howManyRowsCanFillwithMycoins(long long myCoins)
        return FinalAnswer;
 }
 
+/********************/
+/*Lets make Some cockies Div2 rated:*1400*/
+/*https://codeforces.com/contest/670/problem/D2*/
+/*O(n*log(n))*/
+vector<long long> gramsNeeded;
+vector<long long> gramsHave;
+long long numOfIngredientsToMakeOneCockie;
+
+bool canImakeNCokies(long long numOfCockiesToMake,long long numOfMagicPowderIhave)
+{
+       for (long long curIngredient=0;curIngredient<numOfIngredientsToMakeOneCockie;curIngredient++)
+       {
+              if(numOfCockiesToMake*gramsNeeded[curIngredient]>gramsHave[curIngredient])
+              {
+                     numOfMagicPowderIhave-=(numOfCockiesToMake*gramsNeeded[curIngredient]-gramsHave[curIngredient]);
+              }
+              if(numOfMagicPowderIhave<0)
+              {
+                     return false;
+              }
+       }
+       return numOfMagicPowderIhave>=0;
+}
+
+void getMaxNumberOfCockiesIcanDo()
+{
+       // Take the inputs
+       long long numOfMagicPowderIhave;
+       cin >> numOfIngredientsToMakeOneCockie >> numOfMagicPowderIhave;
+       /***************/
+       //Resize tje global vectors to fit the inputs
+       gramsNeeded.resize(numOfIngredientsToMakeOneCockie);
+       gramsHave.resize(numOfIngredientsToMakeOneCockie);
+       /***************/
+       //Take the grams needed and the grams i have
+       for (long long i = 0; i<numOfIngredientsToMakeOneCockie;i++)
+       cin>>gramsNeeded[i];
+       for (long long i = 0; i<numOfIngredientsToMakeOneCockie;i++)
+       cin>>gramsHave[i];
+       /***************/
+       //Binary search on the max number of cockies i can make
+
+       long long minCockies = 0, maxCockies = 1e10;
+       long long FinalAnswer=0;
+       while(minCockies<=maxCockies)
+       {
+              long long midCockies = (minCockies+maxCockies)/2;
+              if(canImakeNCokies(midCockies,numOfMagicPowderIhave))
+              {
+                     FinalAnswer = midCockies;
+                     minCockies = midCockies+1;
+              }
+              else
+              {
+                     maxCockies = midCockies-1;
+              }
+       }
+       cout<<FinalAnswer<<endl;
+
+
+}
+
+
+
+
+
+
 
 
 
@@ -227,14 +294,15 @@ long long howManyRowsCanFillwithMycoins(long long myCoins)
 
 signed main()
 {
-       // cout << (binarySearch()==nullptr?"NOT FOUND":"FOUND") << endl;
+       cout << (binarySearch()==nullptr?"NOT FOUND":"FOUND") << endl;
        //  cout<<lowerBound()<<endl;
        // cout<<upperBound()<<endl;
        // vector<int>nums = {1,1,2,2,3,3,5,7,7,8,8,10,11 ,11};
        // pair<int,int>p= firstLastApear(nums);
        // cout<<p.first<<" "<<p.second<<endl;
       // worms();
-       ll myCoins;
-       cin >> myCoins;
-       cout<<howManyRowsCanFillwithMycoins(myCoins);
+       // ll myCoins;
+       // cin >> myCoins;
+       // cout<<howManyRowsCanFillwithMycoins(myCoins);
+       // getMaxNumberOfCockiesIcanDo();
 }
