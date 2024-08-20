@@ -111,48 +111,126 @@ void nearlyLickyNumber()
               cout << "NO";
 }
 
-vector<int> allPrimes;
-void coustomSieve(ll n = 1e5)
+
+/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P18*/
+vector<ll> allPrimes;
+void coustomSieve(ll n = 1e4)
 {
        vector<bool> isPrime(n, true);
        isPrime[0] = isPrime[1] = false;
-     
 
-       coustomSieve(n);
-       vector<ll> ans;
-
-       for (ll i = 0; i <allPrimes.size() ;i++)
+       for (ll i = 2; i <=n ;i++)
        {
-              ans.push_back(allPrimes[i]);
-              ll sum = allPrimes[i];
-              for (ll j = i+1; j < allPrimes.size();j++)
+              if(isPrime[i])
               {
-                     sum += allPrimes[j];
-                     if(sum<n)
+                     allPrimes.push_back(i);
+                     for (ll j = i * i; j<=n ; j+=i)
                      {
-                            ans.push_back(allPrimes[j]);
+                            isPrime[j] = false;
                      }
-                     else if(sum==n)
-                     {
-                            ans.push_back(allPrimes[j]);
-                            break;
-                     }
-                     else
-                     {
-                            ans.clear();
-                            break;
-                     }
-
               }
-              if(sum==n)
-                     break;
-       }
-       cout << ans.size()<<endl;
-       copy(ans.begin(), ans.end(),ostream_iterator<int>(cout," "));
-
-       
-       
+       } 
 }
+vector<ll> ans;
+bool bachgoldProblem(int n,ll sum=0)
+{
+       if(sum==n)
+       {
+              return true;
+       }
+       for (int i =0; i <allPrimes.size() ;i++)
+       {
+              if(sum+allPrimes[i]<=n)
+              {
+                     ans.push_back(allPrimes[i]);
+                     sum += allPrimes[i];
+                     if(bachgoldProblem(n,sum))
+                            return true;
+                     sum -= allPrimes[i];
+                     ans.pop_back();  
+              }      
+
+       }
+       return false;
+}
+
+void bachgoldProblemSolution()
+{
+       int n;
+       cin >> n;
+       coustomSieve(n);
+       bachgoldProblem(n);
+       cout << ans.size()<<endl;
+       copy(ans.begin(), ans.end(), ostream_iterator<int>(cout, " "));
+}
+
+
+/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P21*/
+vector<ll> allComposites;
+void generateComposites(ll n = 1e8) {
+    vector<bool> isComposite(n + 1, false);
+
+    for (ll i = 2; i <= n; ++i) {
+        if (!isComposite[i]) { 
+            for (ll j = i * 2; j <= n; j += i) {
+                isComposite[j] = true; 
+            }
+        }
+    }
+    for (ll i = 4; i <= n; ++i) {
+        if (isComposite[i]) {
+            allComposites.push_back(i);
+        }
+    }
+}
+void equationSolution()
+{
+       int n;
+       cin >> n;
+       generateComposites(1e8);
+       int left = 0, right = allComposites.size()-1;
+       while(left<right)
+       {
+              if(allComposites[right]-allComposites[left]==n)
+              {
+                     cout << allComposites[right] << " " << allComposites[left];
+                     return;
+              }
+              else if(allComposites[right]-allComposites[left]>n)
+              {
+                     left++;
+              }
+              else
+                     right--;
+       }
+       cout << -1;
+}
+
+/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P23*/
+
+
+void factorise(ll n) // O (N^0.5)
+{
+       ll sum;
+       for (int i = 2; i * i <= n;i++)
+       {
+              if(n%i == 0 )
+              {
+                     int ctr = 0;
+                     while(n%i==0)
+                     {
+                            ctr++;
+                            n /= i;
+                     }
+                     cout << i << "^" << ctr << ",";
+              }
+       }
+       if(n!=1)
+       {
+              cout << n << "^" << 1 << " ";
+       }
+}
+
 
 signed main()
 {
@@ -160,7 +238,10 @@ signed main()
        //TPrimeFast();
        // almostPrime();
        // nearlyLickyNumber();
-       bachgoldProblem();
+       //bachgoldProblemSolution();
+       // equationSolution();
+       //  copy(allComposites.begin(), allComposites.end(), ostream_iterator<int>(cout, " "));
+       factorise(6);
 }
 
 
