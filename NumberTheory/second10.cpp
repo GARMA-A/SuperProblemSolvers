@@ -206,29 +206,21 @@ void equationSolution()
        cout << -1;
 }
 
-/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P23*/
+/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P23*/4
 
-
-void factorise(ll n) // O (N^0.5)
+void DivisorCount()//O(n*Log(n))
 {
-       ll sum;
-       for (int i = 2; i * i <= n;i++)
+       int n;
+       cin >> n;
+       vector<int> divisors(n+1,0);
+       for (int i = 1; i <=n ; i++)
        {
-              if(n%i == 0 )
-              {
-                     int ctr = 0;
-                     while(n%i==0)
-                     {
-                            ctr++;
-                            n /= i;
-                     }
-                     cout << i << "^" << ctr << ",";
-              }
+              for (int j = i; j <=n ; j+=i) divisors[j]++;
        }
-       if(n!=1)
-       {
-              cout << n << "^" << 1 << " ";
-       }
+       long long ans = 0;
+       for(int i =1;i<=n;i++) ans += divisors[i];
+
+       cout << ans;
 }
 
 
@@ -241,7 +233,7 @@ signed main()
        //bachgoldProblemSolution();
        // equationSolution();
        //  copy(allComposites.begin(), allComposites.end(), ostream_iterator<int>(cout, " "));
-       factorise(6);
+       // factorise(6);
 }
 
 
