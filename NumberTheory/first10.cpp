@@ -75,13 +75,94 @@ void factorise(ll n) // O (N^0.5)
                             ctr++;
                             n /= i;
                      }
-                     cout << i << "^" << ctr << ",";
+                     cout << i << "^" << ctr << "*";
               }
        }
        if(n!=1)
        {
               cout << n << "^" << 1 << " ";
        }
+}
+
+void numOfdivisors(ll n) // O(sqrt(n))
+{
+    ll divisor_count = 1; // Start with 1 because we'll multiply by each (exponent + 1)
+    
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            int exponent = 0;
+            while (n % i == 0)
+            {
+                exponent++;
+                n /= i;
+            }
+            divisor_count *= (exponent + 1);
+        }
+    }
+    
+    // If n is still greater than 1, then it's a prime number itself
+    if (n > 1)
+    {
+        divisor_count *= 2; // prime number itself has 2 divisors: 1 and the number itself
+    }
+    
+    cout << "\nNumber of divisors: " << divisor_count << endl;
+}
+
+void numOfEvendivisors(ll n) // O(sqrt(n))
+{
+    ll total_divisors = 1;
+    ll even_divisors = 1; // Start with 1 because we'll multiply by each (exponent + 1)
+    bool has_two = false; // Flag to check if '2' is a factor
+
+    for (int i = 2; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            int exponent = 0;
+            while (n % i == 0)
+            {
+                exponent++;
+                n /= i;
+            }
+            total_divisors *= (exponent + 1);
+            if (i == 2)
+            {
+                has_two = true;
+                even_divisors *= exponent; // Do not add 1 here since we're counting only even divisors
+            }
+            else
+            {
+                even_divisors *= (exponent + 1); // Other primes still affect even divisors
+            }
+        }
+    }
+
+    // If n is still greater than 1, then it's a prime number itself
+    if (n > 1)
+    {
+        total_divisors *= 2;
+        // If the remaining n is 2, set the flag
+        if (n == 2)
+        {
+            has_two = true;
+            even_divisors *= 1; // Prime '2' is already considered
+        }
+        else
+        {
+            even_divisors *= 2; // Prime factors other than 2 affect even divisors
+        }
+    }
+
+    if (!has_two)
+    {
+        even_divisors = 0; // No even divisors if '2' is not a factor
+    }
+
+    cout << "\nNumber of total divisors: " << total_divisors << endl;
+    cout << "Number of even divisors: " << even_divisors << endl;
 }
 
 
@@ -239,6 +320,8 @@ signed main()
        //        cout << isPrime[i] << " " << i << endl;
        /********************************/
        // factorise(99);
+      
+      
 
        /************************************************* */
        //Get the pre computed smallest prime numbers from the file we store it to
@@ -277,6 +360,5 @@ signed main()
        // );
 
  /********************************* */
-      
-      
+       factorise(24750);
 }

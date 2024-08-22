@@ -3,6 +3,26 @@
 using namespace std;
 typedef long long ll;
 
+void getAllDivisors()// O(sqrt(N))
+{
+       deque<int> divisors;
+       int n;
+       cin >> n;
+       for (int i = 1; i * i <= n; i++)
+       {
+              if(n%i==0)
+              {
+                     divisors.push_back(i);
+                     if(i!=n/i)
+                            divisors.push_front(n/i);
+              }
+       }
+       auto it = divisors.begin();
+       advance(it,divisors.size()/2);
+       copy(it, divisors.end(), ostream_iterator<int>(cout, " "));
+       copy(divisors.begin(), it, ostream_iterator<int>(cout, " "));
+}
+
 bool isPrime(int n){
        if(n==1)
               return false;
@@ -28,6 +48,8 @@ vector<bool>sieve(int n=1e7)
        }
        return isPrime;
 }
+
+
 
 /*Div2 Rating:1300*/
 /*https://codeforces.com/contest/230/problem/B*/
@@ -206,7 +228,7 @@ void equationSolution()
        cout << -1;
 }
 
-/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P23*/4
+/*https://codeforces.com/group/yg7WhsFsAp/contest/419146/problem/P23*/
 
 void DivisorCount()//O(n*Log(n))
 {
@@ -234,6 +256,14 @@ signed main()
        // equationSolution();
        //  copy(allComposites.begin(), allComposites.end(), ostream_iterator<int>(cout, " "));
        // factorise(6);
+       // getAllDivisors();
+       int q;
+       cin >> q;
+       while (q--)
+       {
+             cout<< sumOfDivisors();
+       }
+       
 }
 
 
