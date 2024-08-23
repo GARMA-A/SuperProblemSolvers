@@ -1,63 +1,43 @@
-#include <iostream>
-using namespace std;
+#include "../IMPORTME.cpp"
 
-// Function to partition the array
-int partition(int arr[], int low, int high) 
-{
-    int pivot = arr[high];
-    int i = low - 1;
-    
-    int j = low;
-    while (j <= high - 1) {
-        if (arr[j] < pivot) {
-            i++;
-            // Swap arr[i] and arr[j]
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+int partition(vector<int>& arr, int startIndex, int endIndex) {
+    int pivot = arr[startIndex];
+    int start = startIndex + 1;
+    int end = endIndex;
+    while (start<=end) {
+        if(arr[start] <= pivot)
+        {
+             start++;
         }
-        j++;
+        else if( arr[end] > pivot)
+        {
+             end--;
+        }
+        else
+        { 
+            swap(arr[start], arr[end]);
+        }
     }
-
-    // Swap arr[i + 1] and arr[high] (or pivot)
-    int temp = arr[i + 1];
-    arr[i + 1] = arr[high];
-    arr[high] = temp;
-
-    return (i + 1);
+    swap(arr[startIndex], arr[end]);
+    return end;
 }
 
-// Function to implement Quick Sort using while loop
-void quickSort(int arr[], int low, int high) //O(n*log(n))
+void qiuckSort(vector<int>& arr, int startIndex, int endIndex) {
+    if (startIndex < endIndex) {
+        int pivotIndex = partition(arr, startIndex, endIndex);
+        qiuckSort(arr, startIndex, pivotIndex - 1);
+        qiuckSort(arr, pivotIndex + 1, endIndex);
+    }
+}
+
+
+signed main()
 {
-    while (low < high) {
-        int pi = partition(arr, low, high);
-
-        // Recur for the left side
-        quickSort(arr, low, pi - 1);
-        
-        // Update the low index toX sort the right side in the next iteration
-        low = pi + 1;
+    vector<int> v = {9,2,15,3,4};
+    qiuckSort(v, 0, v.size()-1);
+    for(int n : v)
+    {
+        cout << n << " ";
     }
-}
 
-// Function to print the array
-void printArray(int arr[], int size) {
-    int i = 0;
-    while (i < size) {
-        cout << arr[i] << " ";
-        i++;
-    }
-    cout << endl;
-}
-
-int main() {
-    int arr[] = {10, 7, 8, 9, 1, 5};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    quickSort(arr, 0, n - 1);
-
-    cout << "Sorted array: ";
-    printArray(arr, n);
-    return 0;
 }
