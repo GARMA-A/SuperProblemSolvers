@@ -13,7 +13,7 @@ int partition(vector<int>& arr, int startIndex, int endIndex) {
         {
              end--;
         }
-        else
+      else
         { 
             swap(arr[start], arr[end]);
         }
@@ -23,11 +23,10 @@ int partition(vector<int>& arr, int startIndex, int endIndex) {
 }
 
 void qiuckSort(vector<int>& arr, int startIndex, int endIndex) {
-    if (startIndex < endIndex) {
-        int pivotIndex = partition(arr, startIndex, endIndex);
-        qiuckSort(arr, startIndex, pivotIndex - 1);
-        qiuckSort(arr, pivotIndex + 1, endIndex);
-    }
+    if (startIndex >= endIndex) return;
+    int pivotIndex = partition(arr, startIndex, endIndex);
+    qiuckSort(arr, startIndex, pivotIndex - 1);
+    qiuckSort(arr, pivotIndex + 1, endIndex);
 }
 
 
