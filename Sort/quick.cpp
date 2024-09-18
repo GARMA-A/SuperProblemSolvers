@@ -8,11 +8,11 @@ int partition(vector<int>& arr, int startIndex, int endIndex) {
         if(arr[start] <= pivot)
         {
              start++;
-        }
+        
         else if( arr[end] > pivot)
         {
              end--;
-        }
+        
       else
         { 
             swap(arr[start], arr[end]);
@@ -22,18 +22,22 @@ int partition(vector<int>& arr, int startIndex, int endIndex) {
     return end;
 }
 
-void qiuckSort(vector<int>& arr, int startIndex, int endIndex) {
+void helperquicksort(vector<int>& arr, int startIndex, int endIndex) {
     if (startIndex >= endIndex) return;
     int pivotIndex = partition(arr, startIndex, endIndex);
-    qiuckSort(arr, startIndex, pivotIndex - 1);
-    qiuckSort(arr, pivotIndex + 1, endIndex);
+    helperquicksort(arr, startIndex, pivotIndex - 1);
+    helperquicksort(arr, pivotIndex + 1, endIndex);
+}
+
+void quicksort(vector<int>& arr) {
+    helperquicksort(arr, 0, arr.size() - 1);
 }
 
 
 signed main()
 {
     vector<int> v = {9,2,15,3,4};
-    qiuckSort(v, 0, v.size()-1);
+    quicksort(v);
     for(int n : v)
     {
         cout << n << " ";
