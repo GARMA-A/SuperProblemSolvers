@@ -91,6 +91,21 @@ int tiling(int n)
        
 }
 
+
+int party(int n)
+{
+       /*
+       there is a party and every one is invited 
+       now each one is invited can go alone or can go 
+       with any other invited one  i want from you to 
+       calculate tha number of ways each friend can go
+       alone or can go with any other invited one
+       */
+       if(n<2)
+              return 1;
+       return  party(n-1)+((n-1)*party(n-2));
+}
+
 int binaryStrings(int n, bool prevIsOne = false)
 {
        /*
@@ -110,21 +125,6 @@ int binaryStrings(int n, bool prevIsOne = false)
               ans += binaryStrings(n - 1 ,true);
        return ans;
 }
-
-int party(int n)
-{
-       /*
-       there is a party and every one is invited 
-       now each one is invited can go alone or can go 
-       with any other invited one  i want from you to 
-       calculate tha number of ways each friend can go
-       alone or can go with any other invited one
-       */
-       if(n<2)
-              return 1;
-       return  party(n-1)+((n-1)*party(n-2));
-}
-
 
 void subsets(string s,string sub="")
 {

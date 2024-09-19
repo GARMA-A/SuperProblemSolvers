@@ -8,11 +8,11 @@ void radixSort(vector<int> &arr)
        vector<vector<int>> bits(10);
        int max = *max_element(arr.begin(), arr.end());
        int digitNum = log10(max) + 1;
-       for (int i = 0; i < digitNum; i++) 
+       for (int curdigit = 0; curdigit < digitNum; curdigit++) 
        {
               for (int j = 0; j < arr.size(); j++) 
               {
-                     int digit = (arr[j] / (int)pow(10, i)) % 10;
+                     int digit = (arr[j] / (int)pow(10, curdigit)) % 10;
                      bits[digit].push_back(arr[j]);
               }
               arr.clear();
@@ -36,7 +36,7 @@ signed main()
        radixSort(v);
        for (int n : v) 
        {
-              cout << n << " ";X
+              cout << n << " ";
        }
 
 
