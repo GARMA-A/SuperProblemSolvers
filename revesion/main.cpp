@@ -44,16 +44,6 @@ void mergeSort(vector<int> &arr)
 }
 
 
-
-int partition(int startIndex , int endInex , vector<int> &arr)
-{
-       int start = startIndex+1 , pivot = startIndex , end = endInex;
-       while(start<=end)
-       {
-              if(arr[start]<=arr[pivot])
-              {
-                     start++;
-              }
               else if(arr[end]>arr[pivot])
               {
                      end--;
@@ -83,6 +73,7 @@ void quickSortHelper(vector<int>&arr , int startIndex  , int endIndex)
 void quickSort(vector<int>&arr)
 {
        quickSortHelper(arr,0,arr.size()-1);
+       
 }
 
 
@@ -119,6 +110,8 @@ void radix(vector<int>&arr)
 
 
 }
+
+
 
 signed main()
 {

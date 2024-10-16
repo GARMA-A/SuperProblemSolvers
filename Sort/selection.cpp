@@ -18,6 +18,7 @@ void selectionSort(vector<int> & arr)//Complexity O(n^2)
               }
               swap(arr[i], arr[mn]);
        }
+
 }
 
 
@@ -34,6 +35,7 @@ signed main()
        {
               cout << num << " ";
        }
+     
 }
 
 
